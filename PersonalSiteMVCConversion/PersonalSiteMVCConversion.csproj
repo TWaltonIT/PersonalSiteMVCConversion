@@ -122,7 +122,6 @@
     <Content Remove="wwwroot\forms\contact.php" />
     <Content Remove="wwwroot\forms\Readme.txt" />
     <Content Remove="wwwroot\Readme.txt" />
-    <Content Remove="wwwroot\resume.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -248,7 +247,6 @@
     <None Include="wwwroot\forms\contact.php" />
     <None Include="wwwroot\forms\Readme.txt" />
     <None Include="wwwroot\Readme.txt" />
-    <None Include="wwwroot\resume.html" />
   </ItemGroup>
 
   <ItemGroup>
