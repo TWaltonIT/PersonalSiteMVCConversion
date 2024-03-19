@@ -1,0 +1,31 @@
+#header2 {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  #header2.header-scrolled,
+#header2.header-inner-pages {
+  top: 0;
+}
+
+#header2 .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", sans-serif;
+  font-style: italic;
+}
+
+#header2 .logo a {
+  color: #898989;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
