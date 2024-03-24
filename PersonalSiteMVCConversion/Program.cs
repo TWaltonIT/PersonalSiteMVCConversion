@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using PersonalSiteMVCConversion.Data;
+using PersonalSiteMVCConversion.Models;
 
 namespace PersonalSiteMVCConversion
 {
@@ -9,6 +11,15 @@ namespace PersonalSiteMVCConversion
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddOptions<CredentialSettings>().Bind(builder.Configuration.GetSection("Credentials"));
+            builder.Services.AddRecaptcha(new RecaptchaOptions
+            {
+                SiteKey = builder.Configuration.GetValue<string>("Credentials:reCAPTCHA:SiteKey"),
+                SecretKey = builder.Configuration.GetValue<string>("Credentials:reCAPTCHA:SecretKey")
+            });
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -20,6 +31,7 @@ namespace PersonalSiteMVCConversion
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddOptions<CredentialSettings>().Bind(builder.Configuration.GetSection("Credentials"));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

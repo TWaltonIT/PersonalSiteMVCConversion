@@ -23,6 +23,10 @@ body {
   box-sizing: border-box;
 }
 
+main {
+    min-height: 60vh;
+}
+
 h1,
 h2,
 h3,
@@ -1000,7 +1004,7 @@ p {
   margin-left: 5px;
 }
 
-/* Commonts */
+/* Comments */
 .comments {
   background: #fff;
 }
@@ -1072,6 +1076,7 @@ blockquote {
 # Footer
 --------------------------------------------------------------*/
 #footer {
+
   background: #f7f7f7;
   padding-top: 50px;
   padding-bottom: 50px;
